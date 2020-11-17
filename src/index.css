@@ -1,0 +1,299 @@
+
+body {
+  height: 100%;
+  background-color: #ffdfdf;
+  color: #233567;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.logo {
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Merriweather', serif;
+
+}
+
+span {
+  color: #f67280;
+
+}
+
+h1, h2, h3 {
+  font-family: 'Merriweather', serif;
+
+}
+
+button {
+  background-color: #315b96;
+  color: #fbc1bc;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  border: 2px solid #fbc1bc;
+
+}
+
+input[type="submit"] {
+    background-color: #315b96;
+  color: #fbc1bc;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  border: 2px solid #fbc1bc;
+}
+
+input {
+  background-color: #ffdfdf;
+  color: #233567;
+  font-family: 'Poppins', sans-serif;
+  border: 0.5px solid #233567;
+}
+
+textarea {
+  background-color: #ffdfdf;
+  color: #233567;
+  font-family: 'Poppins', sans-serif;
+  border: 0.5px solid #233567;
+}
+
+select {
+    background-color: #ffdfdf;
+  color: #233567;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  top: 0;
+  left: 0;
+  background-color: #315b96;
+  color: #ffdfdf;
+  width: 100%;
+  height: 15%;
+}
+
+.homepage, .search {
+  text-align: center;
+}
+
+.area-users, .interest-users, .search-users {
+  display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: minmax(12vw, auto);
+}
+
+.area-users img, .interest-users img, .search-users img {
+  border-radius: 10%;
+    max-width: 8rem;
+  height: 8rem;
+}
+
+.search-form input{
+  width: 30px;
+}
+
+.search-form select {
+  text-align: center;
+  width: 100px;
+}
+
+#submit {
+  width: 50px;
+}
+
+.welcome {
+  text-align: center;
+}
+
+.errors {
+  color: red;
+  list-style-type: none;
+}
+
+
+.main-div {
+  height: 100%;
+  margin-top: 6%;
+  margin-right: 15%;
+  padding: 2%;
+}
+
+
+.friends-chat-panel {
+  display: flex;
+  flex-direction: column;
+  float: right;
+  width: 16%;
+  position: sticky;
+  right: 0;
+  padding: 0 1%;
+  background-color: #315b96;
+  color: #ffdfdf;
+  height: 100%;
+  text-align: right;
+  overflow-y: scroll;
+  padding-bottom: 40% ;
+  margin-bottom: 0;
+  margin-right: 0;
+  padding-right: 1%;
+}
+
+.friends-chat-panel ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.friends-chat-panel a {
+  color: #fbc1bc;
+}
+
+.chat-list li {
+  color: #fbc1bc;
+  cursor: pointer;
+}
+
+
+.friends-list li {
+  cursor: pointer;
+}
+
+.chat ul {
+  text-align: left;
+  list-style-type: none;
+  padding: 0;
+}
+
+.my-message {
+  background-color: #1E90FF;
+  color: white;
+  padding: 2%;
+  margin: 3%;
+  text-align: right;
+}
+
+.other-message {
+  background-color: #d3d3d3;
+  color: black;
+  padding: 2%;
+  margin: 3%;
+  text-align: left;
+}
+
+.event-detail {
+  position: fixed;
+  right: 20%;
+  top: 20%;
+  float: right;
+  padding-right: 2%;
+}
+
+.event-list {
+  position: fixed;
+  left: 5%;
+  top: 20%;
+}
+
+.event-list ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.event-list li {
+  cursor: pointer;
+}
+
+.event-form {
+  position: fixed;
+  bottom: 10%;
+  left: 30%;
+}
+
+a {
+  text-decoration: none;
+  color: #315b96;
+}
+
+
+.active {
+  color: #f67280;
+}
+
+.nav-link:hover {
+  color: #f67280;
+}
+
+.navbar a {
+  padding-top: 2%;
+  color: #fbc1bc;
+}
+
+.navbar h2 {
+  padding-top: 1%;
+}
+
+.navbar .nav-link{
+  font-size: 1.25rem;
+}
+
+.user-profile {
+  text-align: left;
+  height: 100px;
+  margin-left: 0;
+  position: fixed;
+}
+
+.user-profile ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.image-div img {
+  border-radius: 20px;
+  max-width: 10rem;
+  height: 10rem;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 27%;
+  left: 2%;
+}
+
+.detail-div {
+  position: fixed;
+  left: 17%;
+}
+
+.party-div {
+  position: fixed;
+  top: 50%;
+  left: 2%;
+}
+
+.interest-div {
+  position: fixed;
+  left: 40%;
+
+}
+
+.edit {
+  position: fixed;
+}
+
+.edit-delete-div {
+  position: fixed;
+  top: 70%;
+  left: 2%;
+}
+
+.friend-chat-div {
+  position: fixed;
+  top: 70%;
+}
+
+.about-me {
+  position: fixed;
+  right: 20%;
+  width: 20%;
+}
