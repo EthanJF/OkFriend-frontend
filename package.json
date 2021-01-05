@@ -11,10 +11,11 @@
     "react-actioncable-provider": "^2.0.0",
     "react-big-calendar": "^0.23.0",
     "react-calendar": "^2.19.2",
-    "react-dom": "^16.12.0",
+    "react-dom": "^16.14.0",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.0",
+    "react-scrollable-feed": "^1.2.0",
     "zipcodes": "^8.0.0"
   },
   "scripts": {
