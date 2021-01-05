@@ -4,6 +4,11 @@ import Chat from './Chat'
 import ReactDOM from 'react-dom'
 
 export default class FriendsChatPanel extends Component {
+
+    componentDidMount(){
+        const node = ReactDOM.findDOMNode(this)
+        this.shouldScrollToBottom = node.scrollTop + node.clientHeight + 100 >= node.scrollHeight
+    }
     componentWillUpdate() {
         const node = ReactDOM.findDOMNode(this)
         this.shouldScrollToBottom = node.scrollTop + node.clientHeight + 100 >= node.scrollHeight

@@ -15,24 +15,26 @@ export default class Chat extends Component {
         if (theseMessages) {
             messages = theseMessages.map((message) => {
                 if (message.user.username === this.props.username) {
-                    return <li className="my-message">{message.user.username} said: {message.content}</li>
+                    // return <li className="my-message">{message.user.username} said: {message.content}</li>
+                    return <li className="my-message">{message.content}</li>
                 }
                 else {
-                    return <li className="other-message">{message.user.username} said: {message.content}</li>
+                    // return <li className="other-message">{message.user.username} said: {message.content}</li>
+                    return <li className="other-message">{message.content}</li>
                 }
             })
         }
 
         return (
             <div className="chat">
-                {otherUsername !== undefined ? (<div><h3>Chatting with {otherUsername}</h3>
+                {otherUsername !== undefined ? (<div>
                     <ul className="scrollable-chat">
                         {messages ? messages : ""}
                     </ul>
                     <form onSubmit={(event) => this.props.onChatSubmit(event)}>
                         <input name="message" type="text" onChange={this.props.onMessageChange} value={this.props.message} />
                         <input type="submit" />
-                    </form></div>) : "You need to start a chat first!"}
+                    </form><h3>Chatting with {otherUsername}</h3></div>) : "You need to start a chat first!"}
             </div>
         )
     }

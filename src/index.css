@@ -163,19 +163,23 @@ select {
   padding: 0;
 }
 
+.scrollable-chat li {
+  padding: 4%;
+  width: max-content;
+  border-radius: 10px;
+}
+
 .my-message {
   background-color: #1E90FF;
   color: white;
-  padding: 2%;
-  margin: 3% 0 3% 3%;
+  margin: 3% 0 3% auto;
   text-align: right;
 }
 
 .other-message {
   background-color: #d3d3d3;
   color: black;
-  padding: 2%;
-  margin: 3%;
+  margin: 3% auto 3% 0;
   text-align: left;
 }
 
