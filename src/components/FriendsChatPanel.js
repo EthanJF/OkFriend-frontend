@@ -6,13 +6,9 @@ import ReactDOM from 'react-dom'
 export default class FriendsChatPanel extends Component {
 
     state = {
-        showTopButton: false
+        topButtonDisplay: "none"
     }
 
-    componentDidMount(){
-        const node = ReactDOM.findDOMNode(this)
-        this.shouldScrollToBottom = node.scrollTop + node.clientHeight + 100 >= node.scrollHeight
-    }
     componentWillUpdate() {
         const node = ReactDOM.findDOMNode(this)
         this.shouldScrollToBottom = node.scrollTop + node.clientHeight + 100 >= node.scrollHeight
@@ -30,15 +26,15 @@ export default class FriendsChatPanel extends Component {
         node.scrollTop = 0
     }
 
-    scrollFunction = () => {
-        const node = ReactDOM.findDOMNode(this)
+    scrollFunction = (event) => {
+        const node = event.target
         if (node.scrollTop > 20) {
             this.setState ({
-                showTopButton: true
+                topButtonDisplay: "block"
             })
         } else {
             this.setState ({
-                showTopButton: false
+                topButtonDisplay: "none"
             })
         }
     }
@@ -57,7 +53,7 @@ export default class FriendsChatPanel extends Component {
                  {renderChats.length !== 0 ? renderChats : "You don't have any chats!"}
                 </ul>
                 <Chat username={this.props.username} selectedUserID={this.props.selectedUserID} userID={this.props.userID} allChats={this.props.allChats} addAChat={this.addAChat} thisChat={this.props.thisChat} thisChatMessages={this.props.thisChatMessages} onChatSubmit={this.props.onChatSubmit} message={this.props.message} onMessageChange={this.props.onMessageChange}/>
-                {this.state.showTopButton ? <button id="scroll-button" title="Go to top" onClick={this.scrollToTop}>Top</button> : ""}
+                <button id="scroll-button" title="Go to top" style={{display: this.state.topButtonDisplay}} onClick={this.scrollToTop}>Top</button>
             </div>
         )
     }

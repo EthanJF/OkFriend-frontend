@@ -299,3 +299,10 @@ a {
   right: 20%;
   width: 20%;
 }
+
+#scroll-button {
+  width: 5vw;
+  text-align: center;
+  margin-right: 0;
+  margin-left: auto;
+}
