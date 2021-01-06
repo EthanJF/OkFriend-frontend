@@ -76,6 +76,7 @@ select {
 
 .homepage, .search {
   text-align: center;
+  padding-right: 3%;
 }
 
 .area-users, .interest-users, .search-users {
@@ -129,8 +130,7 @@ select {
   position: fixed;
   top: 15%;
   right: 0;
-  padding: 0 1% 100% 1%;
-  padding-top: 0;
+  padding: 0 1% 100% 0;
   background-color: #315b96;
   color: #ffdfdf;
   height: 45vw;
@@ -179,7 +179,7 @@ select {
 .other-message {
   background-color: #d3d3d3;
   color: black;
-  margin: 3% auto 3% 0;
+  margin: 3% auto 3% 12%;
   text-align: left;
 }
 
