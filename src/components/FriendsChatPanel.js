@@ -9,11 +9,6 @@ export default class FriendsChatPanel extends Component {
         topButtonDisplay: "none"
     }
 
-    componentWillUpdate() {
-        const node = ReactDOM.findDOMNode(this)
-        this.shouldScrollToBottom = node.scrollTop + node.clientHeight + 100 >= node.scrollHeight
-    }
-    
     componentDidUpdate() {
         if (this.shouldScrollToBottom) {
             const node = ReactDOM.findDOMNode(this)
@@ -28,7 +23,7 @@ export default class FriendsChatPanel extends Component {
 
     scrollFunction = (event) => {
         const node = event.target
-        if (node.scrollTop > 20) {
+        if (node.scrollTop > 30) {
             this.setState ({
                 topButtonDisplay: "block"
             })
