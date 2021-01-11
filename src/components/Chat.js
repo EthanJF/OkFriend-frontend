@@ -13,14 +13,14 @@ export default class Chat extends Component {
 
         let messages = null
         if (theseMessages) {
-            messages = theseMessages.map((message) => {
+            messages = theseMessages.map((message, index) => {
                 if (message.user.username === this.props.username) {
                     // return <li className="my-message">{message.user.username} said: {message.content}</li>
-                    return <li className="my-message">{message.content}</li>
+                    return <li key={index} className="my-message">{message.content}</li>
                 }
                 else {
                     // return <li className="other-message">{message.user.username} said: {message.content}</li>
-                    return <li className="other-message">{message.content}</li>
+                    return <li key={index} className="other-message">{message.content}</li>
                 }
             })
         }
@@ -32,8 +32,8 @@ export default class Chat extends Component {
                         {messages ? messages : ""}
                     </ul>
                     <form onSubmit={(event) => this.props.onChatSubmit(event)}>
-                        <input name="message" type="text" onChange={this.props.onMessageChange} value={this.props.message} />
-                        <input type="submit" />
+                        <input name="message" type="text" onChange={this.props.onMessageChange} value={this.props.message} autoComplete="off"/>
+                        <input type="submit" onClick={this.props.scrollToBottom}/>
                     </form><h3>Chatting with {otherUsername}</h3></div>) : "You need to start a chat first!"}
             </div>
         )

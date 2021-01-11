@@ -5,11 +5,11 @@ export default class Friends extends Component {
 
 
     render(){
-        const friends = this.props.friends.map((friend) => {
+        const friends = this.props.friends.map((friend, index) => {
             if(friend.user2.id !== this.props.userID) {
-                return <NavLink className="nav-link" exact to={`/home/user-profile/${friend.user2.username}`}><li key={friend.id}>{friend.user2.username}</li></NavLink>
+                return <NavLink key={index} className="nav-link" exact to={`/home/user-profile/${friend.user2.username}`}><li key={friend.id}>{friend.user2.username}</li></NavLink>
             } else {
-                return <NavLink className="nav-link" exact to={`/home/user-profile/${friend.user1.username}`}><li key={friend.id}>{friend.user1.username}</li></NavLink>
+                return <NavLink key={index} className="nav-link" exact to={`/home/user-profile/${friend.user1.username}`}><li key={friend.id}>{friend.user1.username}</li></NavLink>
             }
         })
         return(
