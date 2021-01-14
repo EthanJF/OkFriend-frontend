@@ -9,6 +9,7 @@ import NavBar from './NavBar'
 import FriendsChatPanel from './FriendsChatPanel'
 import { Route, Switch } from 'react-router-dom'
 import zipcodes from 'zipcodes'
+import Loading from './Loading'
 
 export default class MainDiv extends Component {
 
@@ -24,7 +25,8 @@ export default class MainDiv extends Component {
         message: "",
         nearbyZipCodes: [],
         randomNumber: 0,
-        nearbyUsers: []
+        nearbyUsers: [],
+        loaded: false
     }
 
     componentDidMount(){
@@ -53,7 +55,8 @@ export default class MainDiv extends Component {
                         allUsers: myUsers,
                         nearbyUsers: nearbyUsers,
                         nearbyZipCodes: rad,
-                        randomNumber: rand
+                        randomNumber: rand,
+                        // loaded: true
                     })
                 })
         })
@@ -225,22 +228,25 @@ export default class MainDiv extends Component {
     }
 
     render(){
-        return(
-            <div>
-                <NavBar showProfile={this.props.showProfile} handleProfileClick={this.props.handleProfileClick} handleHomeClick={this.props.handleHomeClick} onClick={this.props.logOutClick} username={this.state.username}/>
-                <FriendsChatPanel userID={this.props.userID} friends={this.state.myFriends} setID={this.setID} username={this.state.username} showChatPanel={this.state.showChatPanel} selectedUserID={this.state.selectedUserID} startChat={this.startChat} startChatFromLI={this.startChatFromLI} allChats={this.state.allChats} thisChat={this.state.thisChat} deleteAChat={this.deleteAChat} thisChatMessages={this.state.thisChatMessages} onChatSubmit={this.onChatSubmit} message={this.state.message} onMessageChange={this.onMessageChange}/>
-                <div className="main-div">
-                    <Switch>
-                        <Route exact path="/home/my-profile/edit" render={(props) => <EditProfile {...props} userID={this.props.userID} deleteAUser={this.deleteAUser} />} />
-                        <Route exact path="/home/my-profile" render={(props) => <MyProfile {...props} selectedUserID={this.state.selectedUserID} resetRedirect={this.resetRedirect} deleteAUser={this.deleteAUser} userID={this.props.userID} interests={this.props.interests} />} />
-                        <Route path="/home/user-profile/:slug" render={ this.renderUserProfile } />
-                        <Route exact path="/home/search" render={(props) => <Search {...props} interests={this.props.interests} allUsers={this.state.allUsers} setID={this.setID} userID={this.props.userID} />} />
-                        <Route exact path="/home/calendar" render={(props) => <CalendarPage {...props} userID={this.props.userID} myFriends={this.state.myFriends} />} />
-                        <Route exact path="/home" render={(props) => <HomePage {...props} allUsers={this.state.allUsers} selectedUserID={this.state.selectedUserID} setID={this.setID} zip_code={this.state.zip_code} userID={this.props.userID} interests={this.state.interests} nearbyZipCodes={this.state.nearbyZipCodes} randomNumber={this.state.randomNumber} nearbyUsers={this.state.nearbyUsers}/>} />
-                    </Switch>
+        if(this.state.loaded){
+            return(
+                <div>
+                    <NavBar showProfile={this.props.showProfile} handleProfileClick={this.props.handleProfileClick} handleHomeClick={this.props.handleHomeClick} onClick={this.props.logOutClick} username={this.state.username}/>
+                    <FriendsChatPanel userID={this.props.userID} friends={this.state.myFriends} setID={this.setID} username={this.state.username} showChatPanel={this.state.showChatPanel} selectedUserID={this.state.selectedUserID} startChat={this.startChat} startChatFromLI={this.startChatFromLI} allChats={this.state.allChats} thisChat={this.state.thisChat} deleteAChat={this.deleteAChat} thisChatMessages={this.state.thisChatMessages} onChatSubmit={this.onChatSubmit} message={this.state.message} onMessageChange={this.onMessageChange}/>
+                    <div className="main-div">
+                        <Switch>
+                            <Route exact path="/home/my-profile/edit" render={(props) => <EditProfile {...props} userID={this.props.userID} deleteAUser={this.deleteAUser} />} />
+                            <Route exact path="/home/my-profile" render={(props) => <MyProfile {...props} selectedUserID={this.state.selectedUserID} resetRedirect={this.resetRedirect} deleteAUser={this.deleteAUser} userID={this.props.userID} interests={this.props.interests} />} />
+                            <Route path="/home/user-profile/:slug" render={ this.renderUserProfile } />
+                            <Route exact path="/home/search" render={(props) => <Search {...props} interests={this.props.interests} allUsers={this.state.allUsers} setID={this.setID} userID={this.props.userID} />} />
+                            <Route exact path="/home/calendar" render={(props) => <CalendarPage {...props} userID={this.props.userID} myFriends={this.state.myFriends} />} />
+                            <Route exact path="/home" render={(props) => <HomePage {...props} allUsers={this.state.allUsers} selectedUserID={this.state.selectedUserID} setID={this.setID} zip_code={this.state.zip_code} userID={this.props.userID} interests={this.state.interests} nearbyZipCodes={this.state.nearbyZipCodes} randomNumber={this.state.randomNumber} nearbyUsers={this.state.nearbyUsers}/>} />
+                        </Switch>
+                    </div>
                 </div>
-                
-            </div>
-        )
+            )
+        } else {
+            return <Loading/>
+        }
     }
 }

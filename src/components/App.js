@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MainDiv from './MainDiv'
 import Welcome from './Welcome'
+import Loading from './Loading'
 import { Route, Switch, Redirect } from 'react-router-dom'
 
 
@@ -20,7 +21,6 @@ export default class App extends Component {
       "science fiction", "fantasy", "literature", "singing", "karaoke", "baking", "board games", "dungeons and dragons",
       "magic the gathering", "activism", "social justice", "clubbing", "bars", "beach", "swimming", "acting"]
   }
-
 
   setToken = event => {
     localStorage.token = event.token
@@ -68,8 +68,7 @@ export default class App extends Component {
           <Route exact path='/' render = { () => <Redirect to="/welcome" /> } />
         </Switch>
 
-      {this.state.token ? "" : <Redirect to="/welcome" />}
-
+        {localStorage.token ? "" : <Redirect to="/welcome" />}
       </div>
     )
   }
