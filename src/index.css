@@ -205,7 +205,7 @@ select {
 
 .area-users, .interest-users, .search-users {
   display: grid;
-    grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: minmax(12vw, auto);
 }
 
@@ -439,5 +439,25 @@ a {
     position: fixed;
     top: 25%;
     left: 30%;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .homepage, .search {
+    text-align: center;
+    padding-right: 3%;
+    padding-top: 25%;
+  }
+
+  .area-users, .interest-users, .search-users {
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    grid-auto-rows: minmax(20vw, auto);
+  }
+
+  .friends-chat-panel{
+    display: none;
   }
 }
