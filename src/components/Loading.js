@@ -3,10 +3,11 @@ import React from 'react'
 const Loading = () => {
     return(
         <div className="loading-div">
-            <h1>Loading</h1>
+            <h1 className="logo"><span>Ok</span>Friend</h1>
+            <h2>Loading</h2>
             <div id="loading-symbol">
-            <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
-        </div>
+                <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            </div>
         </div>
     )
 }

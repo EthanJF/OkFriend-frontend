@@ -56,7 +56,7 @@ export default class MainDiv extends Component {
                         nearbyUsers: nearbyUsers,
                         nearbyZipCodes: rad,
                         randomNumber: rand,
-                        // loaded: true
+                        loaded: true
                     })
                 })
         })

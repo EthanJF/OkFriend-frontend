@@ -10,6 +10,12 @@ body {
 .loading-div {
   text-align: center;
   margin: auto;
+  /* background-color: #315b96;
+  color: #ffdfdf; */
+  position: fixed;
+  top: 25%;
+  left: 42%;
+
 }
 
 /* loading circle stylings begin */
@@ -423,4 +429,15 @@ a {
   text-align: center;
   margin-right: 0;
   margin-left: auto;
+}
+
+/* For small screens and mobile phones */
+@media only screen and (max-width: 768px) {
+
+  .loading-div {
+    text-align: center;
+    position: fixed;
+    top: 25%;
+    left: 30%;
+  }
 }
