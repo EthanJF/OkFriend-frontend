@@ -6,7 +6,7 @@ const Loading = () => {
             <h1 className="logo"><span>Ok</span>Friend</h1>
             <h2>Loading</h2>
             <div id="loading-symbol">
-                <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                <div className="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
             </div>
         </div>
     )

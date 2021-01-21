@@ -50,7 +50,7 @@ export default class MainDiv extends Component {
                         interests: resObj2.interests,
                         myFriends: resObj2.all_friendships,
                         allChats: resObj2.all_chats,
-                        thisChat: resObj2.all_chats[0] ? resObj2.all_chats[0] : {},
+                        thisChat: resObj2.all_chats ? resObj2.all_chats[0] : {},
                         thisChatMessages: resObj2.all_chats[0] ? resObj2.all_chats.messages : [],
                         allUsers: myUsers,
                         nearbyUsers: nearbyUsers,
