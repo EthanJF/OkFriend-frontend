@@ -83,42 +83,47 @@ export default class MyProfile extends Component {
         })
         return (
             <div className="user-profile">
-                <h1>{user.username}</h1>
-                <div className="image-div">
-                    <img alt="profile" src={user.picture} />
+                <div className="left-profile-div">
+                    <h1>{user.username}</h1>
+                    <div className="image-div">
+                        <img alt="profile" src={user.picture} />
+                    </div>
+                    <div className="detail-div">
+                        <ul>
+                            <li><span>Location:</span> New York City</li>
+                            <li><span>Age:</span> {user.age}</li>
+                            <li><span>Gender:</span> {user.gender}</li>
+                        </ul>
+                    </div>
+                    <div className="edit-delete-div">
+                        <NavLink exact to="/home/my-profile/edit">Edit Profile</NavLink>
+                    </div>
                 </div>
-                <div className="detail-div">
-                    <h3>Location: New York City</h3>
-                    <h3>Age: {user.age}</h3>
-                    <h3>Gender: {user.gender}</h3>
-                </div>
-                <div className="party-div">
-                    <h2>What are you like at parties?</h2>
-                    <p>{user.parties}</p>
-                </div>
-                <div className="interest-div">
-                    <h2>My Interests</h2>
-                    <ul>
-                        {userInterests}
-
-                    </ul>
+                <div className="right-profile-div">
+                    <div className="about-me">
+                        <h2>About Me</h2>
+                        {user.about_me}
+                    </div>
+                    <div className="interest-div">
+                        <h2>My Interests</h2>
+                        <ul>
+                            {userInterests}
+                        </ul>
+                    </div>
+                    <div className="party-div">
+                        <h2>What are you like at parties?</h2>
+                        <p>{user.parties}</p>
+                    </div>
+                    <div className="add-interest-div">
                     <h2>Add an Interest:</h2>
-                    <form>
-                        <select name="newInterest" onChange={this.changeInterest} value={this.state.newInterest}>
-                            {interestOptions}
-                        </select>
-                        <br />
-                        <input type="submit" onClick={this.handleSubmit}/>
-                    </form>
-                </div>
-                <div className="about-me">
-                    <h2>About Me</h2>
-                    {user.about_me}
-                </div>
-                <br />
-                <br />
-                <div className="edit-delete-div">
-                    <NavLink exact to="/home/my-profile/edit">Edit Profile</NavLink>
+                        <form>
+                            <select name="newInterest" onChange={this.changeInterest} value={this.state.newInterest}>
+                                {interestOptions}
+                            </select>
+                            <br />
+                            <input type="submit" onClick={this.handleSubmit}/>
+                        </form>
+                    </div>
                 </div>
             </div>
         )

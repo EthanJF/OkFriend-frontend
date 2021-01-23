@@ -8,7 +8,7 @@ export default class UserCard extends Component {
             <NavLink exact to={`/home/user-profile/${this.props.user.username}`}>
             <div>
                 <img alt="profile" src={this.props.user.picture}/>
-                <h3>{this.props.user.username}</h3>
+                <p>{this.props.user.username}</p>
             </div>
             </NavLink>
         )

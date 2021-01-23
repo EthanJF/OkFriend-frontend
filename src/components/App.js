@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import MainDiv from './MainDiv'
 import Welcome from './Welcome'
-import Loading from './Loading'
 import { Route, Switch, Redirect } from 'react-router-dom'
 
 

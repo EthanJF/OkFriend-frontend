@@ -27,13 +27,14 @@ class NavBar extends Component {
             return(
                 <div className="navbar">
                     <h1 className="logo"><span>Ok</span>Friend</h1>
-                    <h2>Welcome, <span>{this.props.username}</span></h2>
+                    <h2>Welcome, <br/><span id="username-span">{this.props.username}</span></h2>
                     <Menu right isOpen={this.state.menuOpen} 
                     onStateChange={(state) => this.handleStateChange(state)}>
                         <NavLink className="nav-link menu-item" exact to="/home">Home</NavLink>
                         <NavLink className="nav-link menu-item" exact to="/home/search">Search</NavLink>
                         <NavLink className="nav-link menu-item" exact to="/home/my-profile">Profile</NavLink>
                         <NavLink className="nav-link menu-item" exact to="/home/calendar">Calendar</NavLink>
+                        {/* <NavLink className="nav-link menu-item" exact to="/home/chat">Chat</NavLink> */}
                         <NavLink className="nav-link menu-item" onClick={this.props.onClick} exact to='/welcome'>Logout</NavLink>
                     </Menu>
                 </div>            

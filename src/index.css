@@ -210,7 +210,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 }
 
-span {
+.navbar span, .loading-div span{
   color: #f67280;
 
 }
@@ -274,9 +274,13 @@ select {
   padding-right: 3%;
 }
 
+.homepage p {
+  font-weight: bold;
+}
+
 .area-users, .interest-users, .search-users {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-auto-rows: minmax(12vw, auto);
 }
 
@@ -435,15 +439,43 @@ a {
 }
 
 .user-profile {
-  text-align: left;
+  /* text-align: left;
   height: 100px;
-  margin-left: 0;
-  position: fixed;
+  margin-left: 0; */
+  margin-top: 3.5rem;
 }
 
 .user-profile ul {
   list-style-type: none;
   padding-left: 0;
+}
+
+.user-profile span {
+  font-weight: bold;
+}
+
+.left-profile-div {
+  /* position: fixed;
+  left: 0; */
+  float: left;
+  margin-right: 3rem;
+}
+
+.right-profile-div {
+  /* margin-right: 0;
+  float: right; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  /* grid-gap: 0.5rem; */
+  /* grid-auto-rows: minmax(12vw, auto); */
+}
+
+.about-me {
+  width: 75%;
+}
+
+.party-div {
+  width: 75%;
 }
 
 .image-div img {
@@ -452,48 +484,12 @@ a {
   height: 10rem;
   padding: 0;
   margin: 0;
-  position: fixed;
-  top: 27%;
-  left: 2%;
 }
 
-.detail-div {
-  position: fixed;
-  left: 17%;
-}
-
-.party-div {
-  position: fixed;
-  top: 50%;
-  left: 2%;
-}
-
-.interest-div {
-  position: fixed;
-  left: 40%;
-
-}
-
-.edit {
-  position: fixed;
-}
-
-.edit-delete-div {
+/* .friend-chat-div {
   position: fixed;
   top: 70%;
-  left: 2%;
-}
-
-.friend-chat-div {
-  position: fixed;
-  top: 70%;
-}
-
-.about-me {
-  position: fixed;
-  right: 20%;
-  width: 20%;
-}
+} */
 
 #scroll-button {
   width: 5vw;
@@ -522,13 +518,19 @@ a {
     padding-top: 25%;
   }
 
-  .area-users, .interest-users, .search-users {
+  /* .area-users, .interest-users, .search-users {
     display: grid;
     grid-template-columns: repeat(3, 3fr);
     grid-auto-rows: minmax(20vw, auto);
-  }
+  } */
 
   .friends-chat-panel{
     display: none;
   }
 }
+
+/* @media only screen and (max-width: 1024px) {
+  #username-span {
+
+  }
+} */
