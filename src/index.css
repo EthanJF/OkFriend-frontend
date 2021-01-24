@@ -382,18 +382,26 @@ select {
   text-align: left;
 }
 
+.calendar-page {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  margin-top: 3.5rem;
+}
+
 .event-detail {
-  position: fixed;
+  /* position: fixed;
   right: 20%;
   top: 20%;
   float: right;
-  padding-right: 2%;
+  padding-right: 2%; */
+  width: 80%;
 }
 
 .event-list {
-  position: fixed;
+  /* position: fixed;
   left: 5%;
-  top: 20%;
+  top: 20%; */
+  width: 80%;
 }
 
 .event-list ul {
@@ -406,9 +414,11 @@ select {
 }
 
 .event-form {
-  position: fixed;
+  /* position: fixed;
   bottom: 10%;
-  left: 30%;
+  left: 30%; */
+  width: 80%;
+
 }
 
 a {
@@ -443,6 +453,8 @@ a {
   height: 100px;
   margin-left: 0; */
   margin-top: 3.5rem;
+  /* margin-top: 6%; */
+
 }
 
 .user-profile ul {
@@ -490,6 +502,8 @@ a {
   position: fixed;
   top: 70%;
 } */
+
+
 
 #scroll-button {
   width: 5vw;
