@@ -20,6 +20,7 @@
     "react-scripts": "^3.4.0",
     "react-scrollable-feed": "^1.2.0",
     "react-sizes": "^2.0.0",
+    "react-uuid": "^1.0.2",
     "zipcodes": "^8.0.0"
   },
   "scripts": {

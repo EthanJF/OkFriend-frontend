@@ -23,7 +23,8 @@ export default class CalendarPage extends Component {
 
     addEvent = (eventObj) => {
         this.setState({
-            allEvents: [...this.state.allEvents, eventObj]
+            allEvents: [...this.state.allEvents, eventObj],
+            thisEvent: eventObj
         })
     }
 

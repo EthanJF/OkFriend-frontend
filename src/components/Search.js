@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import SearchUsers from './SearchUsers'
 import zipcodes from 'zipcodes'
+import uuid from 'react-uuid'
 
 
 export default class Search extends Component {
@@ -62,7 +63,7 @@ export default class Search extends Component {
 
     render(){
         const interests = this.props.interests.map((interest) => {
-            return <option key={interest.id} value={interest}>{interest}</option>
+            return <option key={uuid()} value={interest}>{interest}</option>
         })
         return(
             <div className="search">

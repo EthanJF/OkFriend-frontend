@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import UserCard from './UserCard'
+import uuid from 'react-uuid'
 
 export default class InterestUsers extends Component {
     render() {
@@ -9,7 +10,7 @@ export default class InterestUsers extends Component {
             }
         })
         const allUsers = interestUsers.slice(0,12).map((user) => {
-            return <UserCard user={user} key={user.id} setID={this.props.setID}/>
+            return <UserCard user={user} key={uuid()} setID={this.props.setID}/>
         })
         return (
             <div className="interest-users">

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import uuid from 'react-uuid'
 
 export default class UserProfile extends Component {
 
@@ -7,7 +8,7 @@ export default class UserProfile extends Component {
         const userInterests = this.props.currentUserInterests
 
         const interests = userInterests.map((interest) => {
-            return <li key={interest.id}>{interest.name}</li>
+            return <li key={uuid()}>{interest.name}</li>
         })
 
         const currentFriend = this.props.myFriends.find(element => element.user1_id === this.props.thisUserID || element.user2_id === this.props.thisUserID)
@@ -31,8 +32,8 @@ export default class UserProfile extends Component {
                         <button onClick={() => this.props.addAChat(this.props.currentUser.id)}>Send Message</button>
                     </div>
                 </div>
-              <div className="right-profile-div">
-              <div className="about-me">
+                <div className="right-profile-div">
+                    <div className="about-me">
                         <h2>About Me</h2>
                         {user.about_me}
                     </div>
@@ -42,12 +43,10 @@ export default class UserProfile extends Component {
                             {interests}
                         </ul>
                     </div>
-                <div className="party-div">
+                    <div className="party-div">
                         <h2>What are you like at parties?</h2>
                         <p>{user.parties}</p>
                     </div>
-             
-               
               </div>
             </div>
         )

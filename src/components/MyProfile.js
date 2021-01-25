@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import uuid from 'react-uuid'
 
 export default class MyProfile extends Component {
     state = {
@@ -78,7 +79,7 @@ export default class MyProfile extends Component {
 
         const userInterests = this.state.currentUserInterests.map((interest) => {
             return <div>
-                <li key={interest.id}>{interest.name}  <button onClick={this.deleteInterest} data-id={interest.id} name={interest.name}>Delete</button></li>
+                <li key={uuid()}>{interest.name}  <button onClick={this.deleteInterest} data-id={interest.id} name={interest.name}>Delete</button></li>
             </div>
         })
         return (

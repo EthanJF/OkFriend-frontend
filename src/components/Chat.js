@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import uuid from 'react-uuid'
 
 export default class Chat extends Component {
     render() {
@@ -13,14 +14,12 @@ export default class Chat extends Component {
 
         let messages = null
         if (theseMessages) {
-            messages = theseMessages.map((message, index) => {
+            messages = theseMessages.map((message) => {
                 if (message.user.username === this.props.username) {
-                    // return <li className="my-message">{message.user.username} said: {message.content}</li>
-                    return <li key={index} className="my-message">{message.content}</li>
+                    return <li key={uuid()} className="my-message">{message.content}</li>
                 }
                 else {
-                    // return <li className="other-message">{message.user.username} said: {message.content}</li>
-                    return <li key={index} className="other-message">{message.content}</li>
+                    return <li key={uuid()} className="other-message">{message.content}</li>
                 }
             })
         }

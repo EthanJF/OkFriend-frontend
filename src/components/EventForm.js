@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import uuid from 'react-uuid'
 
 export default class EventForm extends Component {
 
@@ -6,7 +7,7 @@ export default class EventForm extends Component {
         name: "",
         description: "",
         time: new Date(new Date().toString().split('GMT')[0] + ' UTC').toISOString().split('.')[0],
-        otherUser: null,
+        otherUser: "",
         errors: []
     }
 
@@ -54,11 +55,10 @@ export default class EventForm extends Component {
     render() {
         const myFriends = this.props.myFriends.map((friend) => {
             const otherFriend= friend.user1.id===this.props.userID ? friend.user2 : friend.user1
-            return <option name="otherUser" value={otherFriend.id} key={otherFriend.id}>{otherFriend.username}</option>
+            return <option name="otherUser" value={otherFriend.id} key={uuid()}>{otherFriend.username}</option>
         })
         return (
             <div className="event-form">
-                {this.state.errors.map(error => <p>{error}</p>)}
                 <h1>Create a New Event</h1>
                 <form onSubmit={this.onSubmit}>
                     <label>Name: </label>
@@ -77,6 +77,15 @@ export default class EventForm extends Component {
                     </select>
                     <br />
                     <input type="submit"/>
+                    {this.state.errors.map(error => {
+                       if (error === "User2 must exist"){
+                           return ""
+                       } else if(error === "User2 can't be blank"){
+                           return <p key={uuid()}>Other participant can't be blank</p>
+                       } else {
+                           return <p key={uuid()}>{error}</p>
+                       }
+                    })}
                 </form>
             </div>
         )

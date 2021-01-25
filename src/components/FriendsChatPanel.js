@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Friends from './Friends'
 import Chat from './Chat'
+import uuid from 'react-uuid'
 
 
 export default class FriendsChatPanel extends Component {
@@ -36,8 +37,8 @@ export default class FriendsChatPanel extends Component {
     }
 
     render(){
-        const renderChats = this.props.allChats.map((chat, index) => {
-            return <div key={index} onClick={() => this.handleChatDivClick(chat)}><li>{chat.user1.username===this.props.username ? chat.user2.username : chat.user1.username}  <button onClick={() => this.props.deleteAChat(chat.id)}>Delete</button></li></div>
+        const renderChats = this.props.allChats.map((chat) => {
+            return <div key={uuid()} onClick={() => this.handleChatDivClick(chat)}><li>{chat.user1.username===this.props.username ? chat.user2.username : chat.user1.username}  <button onClick={() => this.props.deleteAChat(chat.id)}>Delete</button></li></div>
         })
         return(
             <div className="friends-chat-panel"  onScroll={this.checkScrollPosition}>

@@ -66,7 +66,6 @@ export default class App extends Component {
           <Route path="/home" render={(props) => <MainDiv {...props} showProfile={this.state.showProfile} handleProfileClick={this.handleProfileClick} handleHomeClick={this.handleHomeClick} interests={this.state.interests} userID={this.state.loggedInUserId} logOutClick={this.logOutClick}/>}/>
           <Route exact path='/' render = { () => <Redirect to="/welcome" /> } />
         </Switch>
-
         {localStorage.token ? "" : <Redirect to="/welcome" />}
       </div>
     )
