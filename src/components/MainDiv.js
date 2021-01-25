@@ -30,10 +30,10 @@ export default class MainDiv extends Component {
     }
 
     componentDidMount(){
-        fetch("http://localhost:3000/users")
+        fetch(`${process.env.REACT_APP_ROOT_URL}/users`)
         .then(r => r.json())
         .then(resObj1 => {
-            fetch(`http://localhost:3000/users/${this.props.userID}`)
+            fetch(`${process.env.REACT_APP_ROOT_URL}/users/${this.props.userID}`)
                 .then(r => r.json())
                 .then(resObj2 => {
                     const myUsers = resObj1.filter((user) => {
@@ -63,7 +63,7 @@ export default class MainDiv extends Component {
     }
 
     deleteAUser = () => {
-        fetch(`http://localhost:3000/users/${this.props.userID}`,{
+        fetch(`${process.env.REACT_APP_ROOT_URL}/users/${this.props.userID}`,{
             method: "DELETE"
         })
         .then( r => r.json())
@@ -79,7 +79,7 @@ export default class MainDiv extends Component {
 
     addAFriend = (otherUserID) => {
         if (!this.state.myFriends.find(element => element.user1_id === this.props.selectedUserID || element.user2_id === this.state.selectedUserID)){
-            fetch('http://localhost:3000/friendships', {
+            fetch(`${process.env.REACT_APP_ROOT_URL}/friendships`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -105,7 +105,7 @@ export default class MainDiv extends Component {
     removeAFriend = (otherUserID) => {
         const friendshipID = this.state.myFriends.find(element => element.user1_id === otherUserID || element.user2_id === otherUserID)
         if(friendshipID){
-            fetch(`http://localhost:3000/friendships/${friendshipID.id}`, {
+            fetch(`${process.env.REACT_APP_ROOT_URL}/friendships/${friendshipID.id}`, {
                 method: "DELETE"
             })
                 .then(r => r.json())
@@ -123,7 +123,7 @@ export default class MainDiv extends Component {
 
 
     startChatFromLI = (chat) => {
-        fetch(`http://localhost:3000/chats/${chat.id}`)
+        fetch(`${process.env.REACT_APP_ROOT_URL}/chats/${chat.id}`)
         .then(r => r.json())
         .then(resObj => {
             this.setState({
@@ -137,7 +137,7 @@ export default class MainDiv extends Component {
     addAChat = (otherUserID) => {
         const myChat = this.state.allChats.find(element => element.user1_id === otherUserID || element.user2_id === otherUserID)
         if (!myChat) {
-            fetch("http://localhost:3000/chats", {
+            fetch(`${process.env.REACT_APP_ROOT_URL}/chats`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -169,7 +169,7 @@ export default class MainDiv extends Component {
 }
 
     deleteAChat = (id) => {
-        fetch(`http://localhost:3000/chats/${id}`, {
+        fetch(`${process.env.REACT_APP_ROOT_URL}/chats/${id}`, {
             method: "DELETE"
         })
             .then(r => r.json())
@@ -188,7 +188,7 @@ export default class MainDiv extends Component {
 
     onChatSubmit = (event) => {
         event.preventDefault()
-        fetch("http://localhost:3000/messages", {
+        fetch(`${process.env.REACT_APP_ROOT_URL}/messages`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

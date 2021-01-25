@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+import uuid from 'react-uuid'
 
 export default class Login extends Component {
 
@@ -18,7 +19,7 @@ export default class Login extends Component {
 
     submitClick = event => {
         event.preventDefault()
-        fetch("http://localhost:3000/login", {
+        fetch(`${process.env.REACT_APP_ROOT_URL}/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -54,7 +55,7 @@ export default class Login extends Component {
         return (
             <div className="login">
 
-                {this.state.errors.map(error => <p>{error}</p>)}
+                {this.state.errors.map(error => <p key={uuid()}>{error}</p>)}
 
                 <h2>Login</h2>
                 <form>

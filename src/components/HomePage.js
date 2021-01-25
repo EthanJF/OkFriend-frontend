@@ -9,7 +9,7 @@ export default class HomePage extends Component {
     }
 
     componentDidMount(){
-        fetch(`http://localhost:3000/users/${this.props.userID}`)
+        fetch(`${process.env.REACT_APP_ROOT_URL}/users/${this.props.userID}`)
         .then( r => r.json())
         .then( resObj => {
             if(resObj.interests.length !== 0){

@@ -10,7 +10,7 @@ export default class MyProfile extends Component {
     }
 
     componentDidMount() {
-        fetch(`http://localhost:3000/users/${this.props.userID}`)
+        fetch(`${process.env.REACT_APP_ROOT_URL}/users/${this.props.userID}`)
             .then(r => r.json())
             .then(resObj => {
                 if(this.props.userID){
@@ -30,7 +30,7 @@ export default class MyProfile extends Component {
 
     deleteInterest = (event) => {
         event.preventDefault()
-        fetch(`http://localhost:3000/interests/${event.target.dataset.id}`, {
+        fetch(`${process.env.REACT_APP_ROOT_URL}/interests/${event.target.dataset.id}`, {
             method: "DELETE"
         })
         .then (r => r.json())
@@ -47,7 +47,7 @@ export default class MyProfile extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         if(!this.state.currentUserInterests.find(element => element.name === this.state.newInterest)){
-            fetch("http://localhost:3000/interests", {
+            fetch(`${process.env.REACT_APP_ROOT_URL}/interests`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

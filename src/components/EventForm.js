@@ -19,7 +19,7 @@ export default class EventForm extends Component {
 
     onSubmit = (event) => {
         event.preventDefault()
-        fetch("http://localhost:3000/events", {
+        fetch(`${process.env.REACT_APP_ROOT_URL}/events`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

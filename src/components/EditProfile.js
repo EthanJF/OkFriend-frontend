@@ -21,7 +21,7 @@ export default class EditProfile extends React.Component {
     }
 
     componentDidMount(){
-        fetch(`http://localhost:3000/users/${this.props.userID}`)
+        fetch(`${process.env.REACT_APP_ROOT_URL}/users/${this.props.userID}`)
         .then( r => r.json() )
         .then( resObj => {
             this.setState({
@@ -47,7 +47,7 @@ export default class EditProfile extends React.Component {
 
     submitClick = event => {
         event.preventDefault()
-        fetch(`http://localhost:3000/users/${this.props.userID}`, {
+        fetch(`${process.env.REACT_APP_ROOT_URL}/users/${this.props.userID}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"

@@ -11,7 +11,7 @@ export default class CalendarPage extends Component {
     }
 
     componentDidMount(){
-        fetch(`http://localhost:3000/users/${this.props.userID}`)
+        fetch(`${process.env.REACT_APP_ROOT_URL}/users/${this.props.userID}`)
         .then(r=> r.json())
         .then(resObj => {
             this.setState({
@@ -29,7 +29,7 @@ export default class CalendarPage extends Component {
     }
 
     showEventDetail = (eventID) => {
-        fetch(`http://localhost:3000/events/${eventID}`)
+        fetch(`${process.env.REACT_APP_ROOT_URL}/events/${eventID}`)
         .then(r => r.json())
         .then(resObj => {
             this.setState({
@@ -39,7 +39,7 @@ export default class CalendarPage extends Component {
     }
 
     deleteEvent = (eventID) => {
-        fetch(`http://localhost:3000/events/${eventID}`, {
+        fetch(`${process.env.REACT_APP_ROOT_URL}/events/${eventID}`, {
             method: "DELETE"
         })
         .then(r => r.json())

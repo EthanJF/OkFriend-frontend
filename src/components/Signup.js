@@ -1,5 +1,6 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
+import uuid from 'react-uuid'
 
 class Signup extends React.Component {
 
@@ -30,7 +31,7 @@ class Signup extends React.Component {
         this.setState({
             errors: []
         })
-        fetch("http://localhost:3000/users", {
+        fetch(`${process.env.REACT_APP_ROOT_URL}/users`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -56,7 +57,7 @@ class Signup extends React.Component {
                         errors: resp.errors
                     })
                 } else {
-                    fetch("http://localhost:3000/login", {
+                    fetch(`${process.env.REACT_APP_ROOT_URL}/login`, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
@@ -92,10 +93,10 @@ class Signup extends React.Component {
     render() {
 
         const partyOptions = this.state.allParties.map((party) => {
-            return <option value={party}>{party}</option>
+            return <option key={uuid()} value={party}>{party}</option>
         })
 
-        const errors = this.state.errors.map(error => <li>{error}</li>) 
+        const errors = this.state.errors.map(error => <li key={uuid()}>{error}</li>) 
         return (
             <div className="login">
                 <ul className="errors">
