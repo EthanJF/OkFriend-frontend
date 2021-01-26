@@ -19,29 +19,36 @@ export default class Login extends Component {
 
     submitClick = event => {
         event.preventDefault()
-        fetch(`${process.env.REACT_APP_ROOT_URL}/login`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                username: this.state.username,
-                password: this.state.password
+        if(this.state.username === "" || this.state.password === ""){
+            this.setState({
+                errors: ["Username or password can't be blank"]
             })
-        })
-            .then(r => r.json())
-            .then(resp => {
-                if (resp.errors) {
-                    this.setState({
-                        errors: resp.errors,
-                        username: "",
-                        password: ""
-                    })
-                } else {
-                    this.props.setToken(resp)
-                   
-                }
+        } else {
+            fetch(`${process.env.REACT_APP_ROOT_URL}/login`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    username: this.state.username,
+                    password: this.state.password
+                })
             })
+                .then(r => r.json())
+                .then(resp => {
+                    if (resp.errors) {
+                        this.setState({
+                            errors: resp.errors,
+                            username: "",
+                            password: ""
+                        })
+                    } else {
+                        this.props.setToken(resp)
+                       
+                    }
+                })
+        }
+
     }
 
     componentWillUnmount() {
