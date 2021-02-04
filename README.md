@@ -4,6 +4,7 @@
 </blockquote>
 <hr></hr>
   <h3><a href="https://okfriend.netlify.app/" >Check it out on Netlify!</a></h3>
+    <h3>This is the frontend repo! Find the backend <a href="https://github.com/EthanJF/OkFriend-backend" target="_blank">here</a></h3>
 <hr></hr>
 <p><strong>Built With:</strong></p>
 <ul>
@@ -47,7 +48,7 @@
 <li>
 <p><strong>Option 2</strong></p>
 <ul>
-<li> Clone this repo to your local machine using <a href="https://github.com/EthanJF/OkFriend"><code>https://github.com/EthanJF/OkFriend</code></a></li>
+<li> Clone this repo to your local machine using <a href="https://github.com/EthanJF/OkFriend-frontend"><code>https://github.com/EthanJF/OkFriend-frontend</code></a></li>
 </ul>
 </li>
 </ul>
@@ -57,7 +58,7 @@
 </ul>
 <h3><a id="user-content-step-3" class="anchor" aria-hidden="true" href="#step-3"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Step 3</h3>
 <ul>
-<li> Create a new pull request using <a href="https://github.com/EthanJF/OkFriend/compare/"><code>https://github.com/EthanJF/OkFriend/compare/</code></a>.</li>
+<li> Create a new pull request using <a href="https://github.com/EthanJF/OkFriend-frontend/compare/"><code>https://github.com/EthanJF/OkFriend-frontend/compare/</code></a>.</li>
 </ul>
 <hr>
 </hr>
