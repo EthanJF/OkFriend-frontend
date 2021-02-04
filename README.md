@@ -3,8 +3,8 @@
 <p>OkCupid but for friends! A place to find, meet, and set up events with friends by area, interest, gender, and age</p>
 </blockquote>
 <hr></hr>
-  <!-- <h3><a href="***INSERT HEROKU / NOW LINK HERE***" >Check it out on Heroku!</a></h3> -->
-<!-- <hr></hr> -->
+  <h3><a href="https://okfriend.netlify.app/" >Check it out on Netlify!</a></h3>
+<hr></hr>
 <p><strong>Built With:</strong></p>
 <ul>
   <li>React.js</li>
