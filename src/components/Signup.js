@@ -8,9 +8,9 @@ class Signup extends React.Component {
         username: "",
         email: "",
         password: "",
-        age: 0,
+        age: "",
         gender: "male",
-        zip_code: 0,
+        zip_code: "",
         parties: "I don't go to parties",
         picture: "https://icon-library.net/images/default-profile-icon/default-profile-icon-24.jpg",
         allParties: ["I don't go to parties.", "I'm always looking for a good time.", "I'm the center of attention.",
@@ -107,29 +107,29 @@ class Signup extends React.Component {
                 <h2>Signup</h2>
                 <form>
                     <label>Username: </label>
-                    <input onChange={this.onChange} name="username" type="text" />
+                    <input onChange={this.onChange} name="username" type="text" value={this.state.username}/>
                     <br />
                     <label>Email: </label>
-                    <input onChange={this.onChange} name="email" type="text" />
+                    <input onChange={this.onChange} name="email" type="text" value={this.state.email}/>
                     <br />
                     <label>Password: </label>
-                    <input onChange={this.onChange} name="password" type="password" />
+                    <input onChange={this.onChange} name="password" type="password" value={this.state.password} />
                     <br />
                     <label>Age: </label>
-                    <input onChange={this.onChange} name="age" type="number" />
+                    <input onChange={this.onChange} name="age" type="number" value={this.state.age} />
                     <br />
                     <label>Gender: </label>
-                    <select onChange={this.onChange} name="gender">
+                    <select onChange={this.onChange} name="gender" value={this.state.gender}>
                         <option value="male">male</option>
                         <option value="female">female</option>
                         <option value="non-binary">non-binary</option>
                     </select>
                     <br />
                     <label>Zip Code: </label>
-                    <input onChange={this.onChange} name="zip_code" type="number" />
+                    <input onChange={this.onChange} name="zip_code" type="number" value={this.state.zip_code}/>
                     <br />
                     <label>What are you like at parties?: </label>
-                    <select onChange={this.onChange} name="parties">
+                    <select onChange={this.onChange} value={this.state.parties} name="parties">
                         {partyOptions}
                     </select>
                     <br />

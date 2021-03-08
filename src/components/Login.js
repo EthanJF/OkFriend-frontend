@@ -51,6 +51,24 @@ export default class Login extends Component {
 
     }
 
+    loginSampleUser = () => {
+        fetch(`${process.env.REACT_APP_ROOT_URL}/login`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                username: "John",
+                password: "123"
+            })
+        })
+            .then(r => r.json())
+            .then(resp => {
+                    this.props.setToken(resp)
+                }
+            )
+    }
+
     componentWillUnmount() {
         this.setState({
             username: "",
@@ -62,6 +80,8 @@ export default class Login extends Component {
         return (
             <div className="login">
 
+                <br/>
+                <button onClick={this.loginSampleUser}>Login in as Sample User</button>
                 {this.state.errors.map(error => <p key={uuid()}>{error}</p>)}
 
                 <h2>Login</h2>

@@ -108,7 +108,7 @@ export default class MyProfile extends Component {
                     <div className="interest-div">
                         <h2>My Interests</h2>
                         <ul>
-                            {userInterests}
+                            {userInterests.length > 0 ? userInterests : "You don't have any interests!"}
                         </ul>
                     </div>
                     <div className="party-div">
